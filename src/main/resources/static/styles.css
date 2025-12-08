@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+header {
+    padding: 16px;
+    text-align: center;
+    background: #222;
+    color: #fff;
+}
+
+main {
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#new-task {
+    margin-bottom: 16px;
+}
+
+#task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#task-form input,
+#task-form select,
+#task-form button {
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+#board {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1 1 250px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 8px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.column h2 {
+    text-align: center;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.task-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 0.9rem;
+    background: #fafafa;
+}
+
+.task-card strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.task-card small {
+    display: block;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.task-card button {
+    margin-right: 4px;
+    margin-top: 4px;
+    font-size: 0.8rem;
+}
+
+/* simple responsive tweak */
+@media (max-width: 768px) {
+    #task-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

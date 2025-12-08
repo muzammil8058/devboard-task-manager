@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DevBoard – Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>DevBoard – Task Manager</h1>
+</header>
+
+<main>
+    <section id="new-task">
+        <h2>New Task</h2>
+        <form id="task-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="description" placeholder="Description">
+            <select id="priority">
+                <option value="LOW">Low</option>
+                <option value="MEDIUM" selected>Medium</option>
+                <option value="HIGH">High</option>
+            </select>
+            <input type="date" id="dueDate">
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+    <section id="board">
+        <div class="column" data-status="TODO">
+            <h2>To-do</h2>
+            <div class="tasks" id="todo-column"></div>
+        </div>
+        <div class="column" data-status="IN_PROGRESS">
+            <h2>In Progress</h2>
+            <div class="tasks" id="inprogress-column"></div>
+        </div>
+        <div class="column" data-status="DONE">
+            <h2>Done</h2>
+            <div class="tasks" id="done-column"></div>
+        </div>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
