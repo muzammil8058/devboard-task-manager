@@ -1,3 +1,4 @@
+/* Base layout */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,6 +19,7 @@ main {
     margin: 0 auto;
 }
 
+/* New task form */
 #new-task {
     margin-bottom: 16px;
 }
@@ -35,6 +37,7 @@ main {
     font-size: 0.9rem;
 }
 
+/* Board layout */
 #board {
     display: flex;
     gap: 16px;
@@ -53,6 +56,7 @@ main {
     text-align: center;
 }
 
+/* Tasks inside columns */
 .tasks {
     display: flex;
     flex-direction: column;
@@ -60,6 +64,7 @@ main {
     margin-top: 8px;
 }
 
+/* Individual task card */
 .task-card {
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -79,71 +84,73 @@ main {
     margin-bottom: 4px;
 }
 
+/* Buttons on each task card (default desktop style) */
 .task-card button {
     margin-right: 4px;
     margin-top: 4px;
     font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
 }
 
-/* simple responsive tweak */
+/* Optional wrapper if you use <div class="task-actions">... */
+.task-actions button {
+    margin-right: 4px;
+    margin-top: 4px;
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ---------- RESPONSIVE BEHAVIOUR ---------- */
+
 @media (max-width: 768px) {
+
+    /* Form becomes vertical on small screens */
     #task-form {
         flex-direction: column;
         align-items: stretch;
     }
-}
-/* Buttons on each task card */
-.task-actions button {
-  padding: 0.4rem 0.7rem;
-  font-size: 0.85rem;
-  border-radius: 4px;
-  margin: 0 0.15rem;
-}
 
-/* On small screens make buttons larger and stacked */
-@media (max-width: 768px) {
-  .task-card {
-    padding: 0.75rem;
-  }
+    #task-form input,
+    #task-form select,
+    #task-form button {
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-  .task-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    margin-top: 0.5rem;
-  }
+    /* Board becomes single-column */
+    #board {
+        flex-direction: column;
+    }
 
-  .task-actions button {
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 0.5rem 0.7rem;
-  }
-}
+    .column {
+        flex: 1 1 100%;
+    }
 
-/* Buttons on each task card */
-.task-actions button {
-  padding: 0.4rem 0.7rem;
-  font-size: 0.85rem;
-  border-radius: 4px;
-  margin: 0 0.15rem;
-}
+    .task-card {
+        padding: 12px;
+    }
 
-/* On small screens make buttons larger and stacked */
-@media (max-width: 768px) {
-  .task-card {
-    padding: 0.75rem;
-  }
+    /* Make task buttons large and stacked for touch */
+    .task-card button {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
 
-  .task-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    margin-top: 0.5rem;
-  }
+    .task-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-top: 4px;
+    }
 
-  .task-actions button {
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 0.5rem 0.7rem;
-  }
+    .task-actions button {
+        width: 100%;
+    }
 }
